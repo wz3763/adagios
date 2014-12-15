@@ -39,6 +39,8 @@ install:
   - pip install https://github.com/pynag/pynag/zipball/master
   - python setup.py build
   - python setup.py install
+  - mkdir -p /etc/adagios/
+  - cp adagios/etc/adagios/adagios.conf /etc/adagios/
   - cp -r adagios/etc/adagios/conf.d /etc/adagios/conf.d
   - pynag config --append "broker_module=/usr/lib/check_mk/livestatus.o /var/lib/nagios3/rw/livestatus"
   - pynag config --set "process_performance_data=1"
