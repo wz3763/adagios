@@ -23,7 +23,7 @@ install:
   - sudo chown -R travis /etc/adagios/
   - sudo usermod -G www-data nagios
   - sudo sed -i 's/RUN.*/RUN="yes"/' /etc/default/npcd
-  - sudo pip install --upgrade https://github.com/opinkerfi/okconfig/zipball/master
+  - sudo pip install https://github.com/opinkerfi/okconfig/zipball/master
   - pip install --upgrade https://github.com/opinkerfi/okconfig/zipball/master || true
   - sudo touch /etc/okconfig.conf
   - sudo chown travis /etc/okconfig.conf
