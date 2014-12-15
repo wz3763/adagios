@@ -1,4 +1,5 @@
 language: python
+  - cp -r adagios/etc/adagios/conf.d /etc/adagios/conf.d
 python:
   - "2.6"
   - "2.7"
@@ -22,8 +23,8 @@ install:
   - sudo chown -R travis /etc/adagios/
   - sudo usermod -G www-data nagios
   - sudo sed -i 's/RUN.*/RUN="yes"/' /etc/default/npcd
-  - sudo pip install https://github.com/opinkerfi/okconfig/zipball/master
-  - pip install https://github.com/opinkerfi/okconfig/zipball/master || true
+  - sudo pip install --upgrade https://github.com/opinkerfi/okconfig/zipball/master
+  - pip install --upgrade https://github.com/opinkerfi/okconfig/zipball/master || true
   - sudo touch /etc/okconfig.conf
   - sudo chown travis /etc/okconfig.conf
   - echo 'nagios_config /etc/nagios3/nagios.cfg' >> /etc/okconfig.conf
@@ -36,7 +37,7 @@ install:
   - pip install simplejson
   - pip install paramiko
   - pip install selenium
-  - pip install https://github.com/pynag/pynag/zipball/master
+  - pip install --upgrade https://github.com/pynag/pynag/zipball/master
   - python setup.py build
   - python setup.py install
   - mkdir -p /etc/adagios/
