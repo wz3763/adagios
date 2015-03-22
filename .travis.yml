@@ -10,7 +10,7 @@ script:
   - pwd
   - cd -
   - ls
-  - cd ~/opinkerfi/adagios
+  - cd ~/build/opinkerfi/adagios
   - python manage.py test
 install:
   - whoami
